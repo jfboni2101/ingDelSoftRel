@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.relazioneingdelsoft.FirstPageController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Operations">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAddEmployee" text="Add Employee" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleDeleteEmployee" text="Delete Employee" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAddClient" text="Add Client" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleDeleteClient" text="Delete Client" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAddType" text="Add Type of Job" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleDeleteType" text="Delete Type of Job" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAddJob" text="Add Job" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleDeleteJob" text="Delete Job" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleQuit" text="Quit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Employees">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="tableEmployee" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER_LEFT">
+                          <columns>
+                            <TableColumn fx:id="lastNameEmployee" prefWidth="333.0" text="Last Name" />
+                            <TableColumn fx:id="firstNameEmployee" prefWidth="333.0" text="First Name" />
+                              <TableColumn fx:id="birthdayEmployee" prefWidth="333.0" text="Birthday" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <buttons>
+                              <Button mnemonicParsing="false" onAction="#handleAddEmployee" text="Add Employee" />
+                              <Button mnemonicParsing="false" onAction="#handleDeleteEmployee" text="Delete Employee" />
+                          </buttons>
+                        </ButtonBar>
+                     </bottom>
+                  </BorderPane>
+               </content>
+          </Tab>
+          <Tab text="Clients">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="tableClient" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                              <TableColumn fx:id="lastNameClient" prefWidth="333.0" text="Last Name" />
+                              <TableColumn fx:id="firstNameClient" prefWidth="333.0" text="First Name" />
+                              <TableColumn fx:id="birthdayClient" prefWidth="333.0" text="Birthday" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <ButtonBar prefHeight="40.0" prefWidth="953.0" BorderPane.alignment="CENTER">
+                          <buttons>
+                              <Button mnemonicParsing="false" onAction="#handleAddClient" text="Add Client" />
+                              <Button mnemonicParsing="false" onAction="#handleDeleteClient" text="Delete Client" />
+                          </buttons>
+                        </ButtonBar>
+                     </bottom>
+                  </BorderPane>
+               </content>
+          </Tab>
+            <Tab text="Type of Job">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="tableTypeOfJob" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER_LEFT">
+                           <columns>
+                              <TableColumn fx:id="nameOfJob" prefWidth="241.55720460414886" text="Name" />
+                              <TableColumn fx:id="descriptionOfJob" prefWidth="756.9999847412109" text="Description" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <buttons>
+                              <Button mnemonicParsing="false" onAction="#handleAddType" text="Add Type Of Job" />
+                              <Button mnemonicParsing="false" onAction="#handleDeleteType" text="Delete Type Of Job" />
+                           </buttons>
+                        </ButtonBar>
+                     </bottom>
+                  </BorderPane>
+               </content>
+            </Tab>
+            <Tab text="Jobs">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="tableJob" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                              <TableColumn fx:id="idJob" prefWidth="36.797197341918945" resizable="false" text="ID" />
+                              <TableColumn fx:id="typeOfJob" prefWidth="138.3182029724121" resizable="false" text="Type of job" />
+                              <TableColumn fx:id="lastNameClientJob" prefWidth="101.18179321289062" resizable="false" text="Last Name Client" />
+                              <TableColumn fx:id="firstNameClientJob" prefWidth="101.03495788574219" resizable="false" text="First Name Client" />
+                              <TableColumn fx:id="lastNameEmployeeJob" minWidth="0.0" prefWidth="122.32861328125" resizable="false" text="Last Name Employee" />
+                              <TableColumn fx:id="firstNameEmployeeJob" prefWidth="126.32861328125" resizable="false" text="First Name Employee" />
+                              <TableColumn fx:id="dateOfJob" prefWidth="109.2412109375" resizable="false" text="Date Of Job" />
+                              <TableColumn fx:id="hoursOfJob" prefWidth="67.73773193359375" resizable="false" text="Hours" />
+                              <TableColumn fx:id="sizeOfJob" prefWidth="60.50341796875" resizable="false" text="Size" />
+                              <TableColumn fx:id="addressOfJob" prefWidth="142.6251220703125" resizable="false" text="Addres" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <buttons>
+                            <Button mnemonicParsing="false" onAction="#handleAddJob" text="Add Job" />
+                              <Button mnemonicParsing="false" onAction="#handleDeleteJob" text="Delete Job" />
+                          </buttons>
+                        </ButtonBar>
+                     </bottom>
+                  </BorderPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
