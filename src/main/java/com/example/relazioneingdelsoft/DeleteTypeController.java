@@ -50,14 +50,19 @@ public class DeleteTypeController implements Deletable<TypeOfJob>{
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }finally {
-            if (c != null) {
-                try {
-                    statement.close();
-                    c.close();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
+            closeResources(c, statement);
+        }
+    }
 
+    private void closeResources(Connection c, PreparedStatement statement) {
+        if (c != null) {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                c.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
         }
     }

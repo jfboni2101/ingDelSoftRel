@@ -61,15 +61,18 @@ public abstract class DeletePersonController implements Deletable<Person>{
         }
     }
 
+    @Override
     public Person getElement() {
         return person;
     }
 
+    @Override
     public void setElement(Person person) {
         this.person = person;
         update();
     }
 
+    @Override
     public void update() {
     }
 }
